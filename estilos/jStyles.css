@@ -1,0 +1,176 @@
+/* UNIVERSALES */
+* {
+    font-size: 16px;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Borel', cursive, sans-serif;
+    /* font-family: 'Metal Mania', cursive; */
+    /* font-family: 'Lacquer'; */
+    /* font-family: 'Macondo'; */
+}
+
+/* COLORES */
+:root {
+    --main-color: #2d3a2d;
+    --second-color: #333233aa;
+    --accent-color: #2d3a2def;
+    --bg-color: #d5d5d5;
+    --font-color: #14121c;
+}
+
+/* PADRES HTML */
+body {
+    background-image: url("https://images.unsplash.com/photo-1513628253939-010e64ac66cd?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: contain;
+    /* background-repeat: repeat-y; */
+
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    background-color: var(--accent-color);
+    position: sticky;
+    top: 0;
+}
+
+#logo {
+    width: 5rem;
+    vertical-align: middle;
+    padding: 0.5rem;
+}
+
+nav {
+    display: inline-block;
+}
+
+ul.ulNav {
+    list-style: none;
+}
+
+ul.ulNav li {
+    display: inline-block;
+    /* padding: 1rem 0; */
+}
+
+ul.ulNav li a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 1.3rem;
+    padding: 0 1rem 0 1rem;
+    margin: 0 2rem;
+}
+
+/* ------MAIN */
+/* main {} */
+
+div.banner {
+    padding: 3rem 10rem;
+}
+
+div.banner h1 {
+    font-size: 5rem;
+    font-family: "Macondo";
+
+    margin: 3rem 0 0 0;
+    
+    background-color: var(--second-color);
+}
+
+div.banner p {
+    padding: 3rem 0 0 0;
+    font-size: 1.5rem;
+    background-color: var(--second-color);
+}
+
+/* ---------GALLERY */
+#gPrime {
+    padding: 10rem 0 0 0;
+    font-size: 2rem;
+}
+
+div.gallery {
+    /* background-color: var(--second-color); */
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+div.item {
+    flex: 1 0 15rem;
+    padding: 0.3rem;
+    margin: 0.5rem;
+    background-color: var(--main-color);
+}
+
+div.item img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* -------PROJECTS */
+#pPrime {
+    padding: 10rem 0 0 0;
+    font-size: 2rem;
+}
+
+div.projects {
+    /* background-color: var(--main-color); */
+    cursor: pointer;
+}
+
+/* ul.ulProjects{} */
+li.liProjects {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 2rem;
+}
+
+div.proys {
+    background-color: var(--second-color);
+    padding: 2rem;
+    display: none;
+    border: solid var(--main-color);
+}
+
+div.proys h3 {
+    margin: 0 0 2rem 0;
+}
+
+div.proys a {
+    font-size: 3rem;
+    text-decoration: overline;
+    letter-spacing: 0.3rem;
+    color: var(--bg-color);
+}
+
+
+/* -------SKILS */
+#fPrime {
+    font-family: "Metal Mania";
+    margin: 2rem 0 0 0;
+}
+
+footer {
+    background-color: var(--accent-color);
+    padding: 1rem;
+}
+
+/* a.footer{} */
+img.foot {
+    width: 3rem;
+    vertical-align: bottom;
+}
+
+h2.prime {
+    font-size: 3rem;
+    margin: 2rem 0 0 0;
+    padding: 2rem 0 0 0;
+    font-family: "Macondo";
+}
