@@ -1,14 +1,97 @@
 class Calculadora {
     constructor() {
-        this._numeros = document.querySelectorAll("li.number");
-        this._operaciones = document.querySelectorAll("li.opc");
-        this._clear = document.querySelector("#clear");
-        this._equal = document.querySelector("#result");
-        this._pantalla = document.querySelector("#pantalla");
-        this._input = document.querySelector("#inputs");
-        this._calc = [];
+        this.numeros = document.querySelectorAll(".number");
+        this.operadores = document.querySelectorAll("li.opc");
+        this.pantalla = document.querySelector("#pantalla");
+        this.input = document.querySelector("#inputs");
+        this.clear = document.querySelector("#clear");
+        this.equal = document.querySelector("#result");
+        this.calc = [];
+
+        this.eventPressNum = (num) => {
+            if(this.calc.length==1){
+                console.log(this.calc)
+                return this.pantalla.innerHTML="ERROR press operation";
+            }
+
+            this.pantalla.innerHTML = "";
+            this.printCalc();
+            return this.input.innerHTML += +num.target.innerHTML;
+        }
+
+        this.eventClear = () => {
+            for (let i = 1; i = this.calc.length; i++) {
+                this.calc.pop();
+            }
+            console.log(this.calc)
+            return this.clearBoth();
+        }
+
+// esta mal
+        // this.eventEqual = () =>{
+        //     if(this.calc.length==1){
+        //         console.log(this.calc)
+        //         return this.printCalc();
+        //     }
+        //     if(this.checkInput()){
+
+        //         return this.printCalc()
+        //     }
+        // }
+
+        this.eventNew = () =>{
+            if( this.checkInput()||this.calc.length!==1){
+                return this.splitDoMath()
+            }
+            return this.printCalc();
+        }
+
+        this.eventOpera = opera =>{
+            if(this.calc.length===1){
+                this.calc.push(opera.target.innerHTML);
+                return this.printCalc();
+            } else if(this.checkInput()){
+                this.calc.push(Number(this.input.innerHTML),opera.target.innerHTML);
+                this.clearBoth();
+                return this.printCalc();
+            }
+
+        }
+    }//fin constructor
+
+    splitDoMath(){
+        this.calc.push(Number(this.input.innerHTML));
+        const xCalc = this.calc.slice(0);
+        let ans = this.calc.shift();
+
+        while(this.calc.length>0){
+            let next = this.calc.splice(0,2);
+            ans = this.doMath(next,ans);
+        }
+        this.eventClear();
+        this.calc.push(ans);
+        this.printCalc();
+        return true;
+    }
+    printCalc() {
+        this.pantalla.innerHTML = "";
+        return this.calc.forEach(x => {
+            this.pantalla.innerHTML += x;
+        });
     }
 
+    clearBoth() {
+        this.pantalla.innerHTML = "";
+        return this.input.innerHTML = "";
+    }
+
+    checkInput() {
+        if (this.input.innerHTML == "") {
+            this.pantalla.innerHTML = "ERROR: press number";
+            return false;
+        }
+        return true;
+    }
     doMath(newArr, acc) {
         switch (newArr[0]) {
             case "+":
@@ -28,102 +111,21 @@ class Calculadora {
                 break;
         }
     }
-    clearBoth() {
-        this._pantalla.innerHTML = "";
-        return this._input.innerHTML = "";
-    }
-    clearAll() {
-        for (let i = 1; i = this._calc.length; i++) {
-            this._calc.pop();
-        }
-        console.log(this._calc)
-        return this.clearBoth();
-    }
-    checkInput() {
-        if (this._input.innerHTML == "") {
-            this._pantalla.innerHTML = "ERROR: press number";
-            return false;
-        }
-        return true;
-    }
 
-    printCalc() {
-        this._pantalla.innerHTML = "";
-        return this._calc.forEach(x => {
-            this._pantalla.innerHTML += x;
+    escucha() {
+        this.numeros.forEach(numero => {
+            numero.addEventListener("click", this.eventPressNum);
         });
-    }
-    pressNum(num) {
-        this._pantalla.innerHTML = "";
-        this.printCalc();
-        return this._input.innerHTML += num;
-    }
-    pressOper(oper) {
-        if (this.checkInput()) {
-            this._calc.push(Number(this._input.innerHTML), oper);
-            this.clearBoth();
-            return this.printCalc();
-        }
-        return false;
-    }
-    pressClear() {
-        return this.clearAll();
-    };
-    pressEqual() {
-        if (this.checkInput()) {
-            this._calc.push(Number(this._input.innerHTML));
-            const xcalc = this._calc.slice(0);
-            let ans = this._calc.shift();
-            while (this._calc.length > 0) {
-                let next = this._calc.splice(0, 2);
-                ans = this.doMath(next, ans);
-            }
-            this.clearAll();
-            this._pantalla.innerHTML=xcalc.join("")+"="+ans;
-            return console.log(ans)
-        }
-    }
 
-
-
-    static turnOn(obj) {
-        obj._numeros.forEach(keyNum => {
-            keyNum.addEventListener("click", () => {
-                obj.pressNum(keyNum.innerHTML);
-            });
+        this.operadores.forEach(oper=>{
+            oper.addEventListener("click",this.eventOpera);
         });
-        obj._clear.addEventListener("click", () => {
-            obj.clearAll();
-        })
 
-        obj._operaciones.forEach(key => {
-            key.addEventListener("click", () => {
-                obj.pressOper(key.innerHTML);
-            });
-        })
+        this.clear.addEventListener("click",this.eventClear);
 
-        obj._equal.addEventListener("click",()=>{
-            obj.pressEqual();
-        })
+        this.equal.addEventListener("click",this.eventNew);
     }
-
-    // static turnOff(obj){
-    //     obj._numeros.forEach(keyNum => {
-    //         keyNum.removeEventListener("click",obj.pressOper(keyNum.innerHTML));
-    //     })
-
-    //     obj._clear.removeEventListener("click",obj.clearAll)
-
-    //     obj._operaciones.forEach(key => {
-    //         key.removeEventListener("click",obj.pressOper(key.innerHTML))
-    //     })
-
-    //     obj._equal.removeEventListener("click",()=>{
-    //         obj.pressEqual();
-    //     })
-    // }
 }
 
-const xx = new Calculadora();
-Calculadora.turnOn(xx);
-// Calculadora.turnOff(xx);
+const miCalc = new Calculadora;
+miCalc.escucha();

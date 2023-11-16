@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: black;
+    text-align: center;
+  }
+  
+  main{
+    background-color: azure;
+  }
+  /* h1{} */
+  
+  /* -------------------PUNTO */
+  section.punto{
+    border: solid;
+    height: 7rem;
+    padding: 0.6rem;
+  }
+  
+  #numPunto{
+    margin: 0.5rem auto;
+    display: block;
+    width: 6rem;
+    font-size: 1.5rem;
+  }
+  /* -------------------FIN PUNTO */
+  
+  /* ------------------TIEMPO */
+  section.tiempo{
+    border: solid red;
+  }
+  div.timeFrame{
+    border: solid green;
+    display: inline-block;
+  
+    width: 11rem;
+    margin: 1rem 0 0 0;
+    padding: 0.5rem;
+  }
+  
+  label.timeLabel{
+    display: block;
+  }
+  input.clock{
+    background-color: blue; 
+    font-size: 1rem;
+  
+    height: 5rem;
+    padding: 0.5rem;
+  }
+  /* --------------------FIN TIEMPO */
+  
+  
+  /* -------------------------ACTAS */
+  #pagUno, #pagDos{
+    border: solid;
+  }
+  
+  
+  div.actasFrame {
+    border: solid;
+    width: 14rem;
+  }
+  label.actasLabel{
+    color: red;
+  }
+  span.spanActas{
+    font-size: 2rem;
+  }
+  input.actasInput{
+    display: block;
+  
+    margin: 1rem auto;
+  }
+  /* ------------------------- */
+  div.atencionesFrame{
+    border: solid red;
+    width: 14rem;
+    text-align: left;
+  }
+  
+  label.atencionesLabel{
+    font-weight: 800;
+  }
+  
+  input.atencionesInput{
+    font-size: 2rem;
+    display: inline-block;
+    width: 12rem;
+  
+    margin: 0 0 1rem 0;
+  }
+  /* -------------------------FIN ACTAS */
+  
+  
+  
+  section.actas{
+    display: flex;
+    flex-flow: wrap row;
+  
+    justify-content: center;
+  }
+  
+  section.actas form{
+    margin: 1rem 0.5rem 0 0;
+  }
+  
+  #calcular{
+    margin: 2rem;
+    border: solid aqua 2rem;
+  }
+  
+  #resultados{
+    font-size: 2rem;
+    text-align: justify;
+    border: solid;
+    font-family: Verdana, sans-serif;
+  }
