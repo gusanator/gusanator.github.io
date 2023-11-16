@@ -13,6 +13,7 @@
   
   main{
     background-color: azure;
+    width: 100vw;
   }
   /* h1{} */
   
@@ -117,6 +118,7 @@
   }
   
   #resultados{
+    width: 100vw;
     font-size: 2rem;
     text-align: justify;
     border: solid;
