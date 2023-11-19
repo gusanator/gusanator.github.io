@@ -1,173 +1,177 @@
-const boton = document.querySelector("#calcular");
-const TOTAL = 200;
-const actasInput = document.querySelectorAll(".actasInput");
-
-const puntoObj = document.querySelector("#punto");
-const puntoInputs = puntoObj.querySelectorAll("input"); 
-
-const timeObj = document.querySelector("#time");
-const timeInputs = timeObj.querySelectorAll("input");
-
-// ----------
-const atenciones = document.querySelectorAll(".atencionesInput");
-
-const femeninos=[];
-const masculinos=[];
-const femBoy = [];
-
-const acompleta = (input) =>{
-    const total = 25;
-    return Number(total-input);
+const REPORTE = document.querySelectorAll('form');
+const PUNTO = [];
+const BOTONES_NEXT = document.querySelectorAll("input.nextButton");
+const PRINT_PUNTOS = document.querySelectorAll("li.punto");
+const MENSAJE = document.querySelector("#mensaje");
+const BOTON_MENSAJE = document.querySelector("#btnMensaje");
+//hidden hojas
+for (let z = 1; z < REPORTE.length; z++) {
+    REPORTE[z].hidden = true;
 };
+//return arrayValores del FORM actual
+function getArrayValores(objElements) {
+    const ans = [];
+    for (let y = 0; y < objElements.length - 2; y++) {
+        ans.push(objElements[y].value)
+    }
+    return ans;
+}
+function selectFocus() {
+    for (let x = 0; x < PRINT_PUNTOS.length; x++) {
+        const activo = REPORTE[x].hidden == false ? true : false;
 
-for(let j=1;j<atenciones.length;j+=3){
-    femeninos.push(atenciones[j]);
-    femBoy.push(atenciones[j].value);
-};
-for(let j=0;j<atenciones.length;j+=3){
-    masculinos.push(atenciones[j]);
-    femBoy.push(atenciones[j].value);
-};
-// ----------
-
-
-boton.addEventListener("click", () => {
-    const pag1 = document.querySelector("#pagUno");
-    const datos1 = [];
-    const pag2 = document.querySelector("#pagDos");
-    const datos2 = [];
-    const pag3 = document.querySelector("#pagTres");
-    const datos3 = [];
-    const pag4 = document.querySelector("#pagCuatro");
-    const datos4 = [];
-    const pag5 = document.querySelector("#pagCinco");
-    const datos5 = [];
-    const pag6 = document.querySelector("#pagSeis");
-    const datos6 = [];
-    const pag7 = document.querySelector("#pagSiete");
-    const datos7 = [];
-    const pag8 = document.querySelector("#pagOcho");
-    const datos8 = [];
-
-    const maxSuma = [];
-
-    for (let y = 0; y < 6; y++) {
-        datos1.push(pag1[y].value);
-        datos2.push(pag2[y].value);
-        datos3.push(pag3[y].value);
-        datos4.push(pag4[y].value);
-        datos5.push(pag5[y].value);
-        datos6.push(pag6[y].value);
-        datos7.push(pag7[y].value);
-        datos8.push(pag8[y].value);
-    };
-
-    function suma() {
-        for (let x = 0; x < 6; x++) {
-            maxSuma.push(Number(datos1[x]) + Number(datos2[x]) + Number(datos3[x]) + Number(datos4[x]) + Number(datos5[x]) + Number(datos6[x]) + Number(datos7[x]) + Number(datos8[x]));
+        if (activo) {
+            PRINT_PUNTOS[x].style.fontSize = "2rem";
+            PRINT_PUNTOS[x].style.color = "black";
+        } else {
+            PRINT_PUNTOS[x].style.fontSize = "";
+            PRINT_PUNTOS[x].style.color = "";
+            
         }
-        return maxSuma;
     };
-    suma();
-    const maxAtenciones = maxSuma.splice(3);
-    maxSuma.push(maxAtenciones.pop());
+}
+selectFocus();
 
-    // conso le.log(`Na: Ma:${maxSuma[1]} De:${maxSuma[2]} H:${maxAtenciones[0]} F:${maxAtenciones[1]} Su:${maxSuma[3]}`);
+// EVENTs LISTENER
+function escuchaSpans() {
+    const inputActas = document.querySelectorAll(".inputActa");
+    const inputSpans = document.querySelectorAll(".spanNumber");
 
-
-    function sumaActas(){
-        let superSuma=0;
-        maxSuma.forEach(actas=>{
-            superSuma+=actas
-        })
-        return superSuma;
+    for (let i = 0; i < inputActas.length; i++) {
+        inputActas[i].addEventListener("input", () => {
+            inputSpans[i].innerHTML = inputActas[i].value;
+            inputSpans[i].style.color = "blue";
+        });
     }
+    return true;
+}
+escuchaSpans();
 
-    const punto = [];
-    for(let z=0;z<3;z++){
-        punto.push(puntoInputs[z].value);
-    }
-    const horas=[];
-    for(let w=0;w<4;w++){
-        horas.push(timeInputs[w].value)
-    }
-    const totalActas=sumaActas();
+for (let j = 0; j < REPORTE.length; j++) {
+    REPORTE[j].addEventListener("submit", (event) => {
+        event.preventDefault();
+        const hoja = new ReporteHoja(getArrayValores(REPORTE[j].elements));
 
+        console.log(hoja.check());
+        // if check()
+        hoja.check() ? PUNTO[j] = hoja : alert("REVISA TUS VALORES");
 
-// --------atenciones
-let sumFem=0;
-let sumBoy=0;
-femeninos.forEach(fem=>{
-    sumFem+=Number(fem.value);
-})
-masculinos.forEach(boy=>{
-    sumBoy+=Number(boy.value);
-});
+        // --------------PRINT_PUNTOS
+        for (let i = 0; i < PRINT_PUNTOS.length; i++) {
+            if (PUNTO[i] !== undefined) {
+                PRINT_PUNTOS[i].style.backgroundColor = "green";
+            } else {
+                PRINT_PUNTOS[i].style.backgroundColor = "red";
+            }
+        }
+        // -------------------FIN PRINT_PUNTOS
 
-// fin atenciones
-
-function check() {
-    let checkUno = 0;
-    let checkDos = 0;
-    for (let i = 0; i < 4; i++) {
-        checkUno += maxSuma[i]
-    };
-    for (let i = 0; i < 2; i++) {
-        checkDos += maxAtenciones[i];
-    };
-    return checkUno <= totalActas && checkDos <= TOTAL && sumBoy+sumFem<=totalActas && totalActas<=TOTAL? true : false;
+        console.log(PUNTO)
+    });
 };
-console.log(check())
 
-    console.log(`
-    Punto: ${puntoInputs[0].value}, ${puntoInputs[1].value}, ${puntoInputs[2].value}
-    Hora de llegada: ${horas[0]}
-    Hora de instalación: ${horas[1]}
-    Hora Inicio: ${horas[2]}
-    Hora Fin: ${horas[3]}
-    *ACTAS*
-    Nacimiento: ${maxSuma[0]}
-    Matrimonio: ${maxSuma[1]}
-    Defunción: ${maxSuma[2]}
-    Sucias: ${maxSuma[3]}
-    TOTAL: ${totalActas}
-    *ATENCIÓNES*
-    HOMBRES: ${sumBoy}
-    MUJERES: ${sumFem}`);
+for (let z = 0; z < BOTONES_NEXT.length; z++) {
+    BOTONES_NEXT[z].addEventListener("click", () => {
+        if (REPORTE[z + 1] == undefined) {
+            REPORTE[z].hidden = true;//.style.display="none";
+            REPORTE[0].hidden = false;
+        } else {
+            REPORTE[z].hidden = true;
+            REPORTE[z + 1].hidden = false;
+        }
+        selectFocus();
+    });
 
-    if(check()){
-        const printAll = document.querySelector("#resultados");
-        const ans = 
-`Punto: ${puntoInputs[0].value}, ${puntoInputs[1].value}, ${puntoInputs[2].value}
-Hora de llegada: ${horas[0]}
-Hora de instalación: ${horas[1]}
-Hora Inicio: ${horas[2]}
-Hora Fin: ${horas[3]}
-*ACTAS*
-Nacimiento: ${maxSuma[0]}
-Matrimonio: ${maxSuma[1]}
-Defunción: ${maxSuma[2]}
-Sucias: ${maxSuma[3]}
-TOTAL: ${totalActas}
-*ATENCIÓNES*
-HOMBRES: ${sumBoy}
-MUJERES: ${sumFem}`
-        printAll.innerHTML = ans;
-    }else{
-        alert("CHECA TUS RESPUESTAS");
+
+};
+
+BOTON_MENSAJE.addEventListener("click", () => {
+    ReporteHoja.pirntMensaje(PUNTO)
+});
+//FIN EVENTs LISTENER
+
+class ReporteHoja {
+    constructor(arrayValores) {
+        this._actas = [];
+        this._atenciones = [];
+        for (let x = 0; x < arrayValores.length; x++) {
+            if (x >= 4) {
+                this._atenciones.push(+arrayValores[x])
+            } else {
+                this._actas.push(+arrayValores[x]);
+            }
+        }
+    }//fin constructor
+
+    get actas() {
+        return this._actas
     }
-});//fin de addEventListener
+    get atenciones() {
+        return this._atenciones
+    }
+    check() {
+        let sumaActas = 0;
+        let sumNaMaDe = 0;
+        let sumaAtenciones = 0;
+        for (let x of this._actas) {
+            sumaActas += x;
+        }
+        for (let x = 0; x < this._actas.length - 1; x++) {
+            sumNaMaDe += this._actas[x];
+        }
+        for (let y of this._atenciones) {
+            sumaAtenciones += y
+        }
+        if (sumNaMaDe == sumaAtenciones && sumaActas <= 25 && sumaAtenciones <= 25) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-const spans = document.querySelectorAll(".spanActas")
-actasInput.forEach((acta,index)=>{
-    acta.addEventListener("input",()=>{
-        spans[index].innerHTML = acta.value;
-    });
-});//fin de addEventListener
+    static pirntMensaje(ArrayPunto) {
+        function sumaTodo() {
+            let TOTAL_ACTAS = 0;
+            let TOTAL_ATENCIONES = 0;
+            let SOBRAN = 0;
 
+            for (let hoja of ArrayPunto) {
+                for (let acta of hoja.actas) {
+                    TOTAL_ACTAS += acta;
+                }
+                for (let persona of hoja.atenciones) {
+                    TOTAL_ATENCIONES += persona;
+                }
+            }
+            SOBRAN = 200 - TOTAL_ACTAS;
+            return [TOTAL_ACTAS, TOTAL_ATENCIONES, SOBRAN];
+        }
 
-femeninos.forEach((fem,index)=>{
-    fem.addEventListener("input",()=>{
-        masculinos[index].value = acompleta(Number(fem.value))
-    });
-});//fin addEventListener
+        function sumaActas() {
+            let na = 0;
+            let ma = 0;
+            let de = 0;
+            let su = 0;
+            let fem = 0;
+            let boy = 0;
+            for (let hoja of PUNTO) {
+                na += hoja.actas[0];
+                ma += hoja.actas[1];
+                de += hoja.actas[2];
+                su += hoja.actas[3];
+
+                fem += hoja.atenciones[0];
+                boy += hoja.atenciones[1];
+            }
+            return [na, ma, de, su, fem, boy];
+        }
+
+        const total_actas = sumaActas();
+        const total_total = sumaTodo();
+        MENSAJE.innerHTML = "\ntotal nacimiento:" + total_actas[0] + "\ntotal matrimonio:" + total_actas[1]
+            + "\ntotal defuncion:" + total_actas[2] + "\ntotal sucias:" + total_actas[3]
+            + "\ntotal femenino:" + total_actas[4] + "\ntotal masculino:" + total_actas[5]
+            + "\nTOTAL actas" + total_total[0] + "\nTOTAL atenciones:" + total_total[1] + "\nSOBRAN:" + total_total[2];
+
+    }
+}//fin clase

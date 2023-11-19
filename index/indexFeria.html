@@ -1,338 +1,220 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilos/styleFeria.css">
-    <script src="../js/feria.js" defer></script>
-    <title>Ferias del bienestar</title>
+    <link rel="stylesheet" href="./estilo.css">
+    <script src="./codigo.js" defer></script>
+    <title>Document</title>
 </head>
 
 <body>
     <main>
-        <h1>ferias del bien estar</h1>
-
-        <section class="punto">
-            <form id="punto">
-                <input type="number" name="numPunto" id="numPunto" min="1" max="15" placeholder="PUNTO" value="5">
-
-                <input list="delegaciones" name="delegacion" id="delegacion" placeholder="delegacion" required
-                    value="Coyoacán">
-                <datalist id="delegaciones">
-                    <option value="Álvaro Obregón">Álvaro Obregón</option>
-                    <option value="Azcapotzalco">Azcapotzalco</option>
-                    <option value="Benito Juarez">Benito Juarez</option>
-                    <option value="Coyoacán">Coyoacán</option>
-                    <option value="Cuajimalpa de Morelos">Cuajimalpa de Morelos</option>
-                    <option value="Cuauhtémoc">Cuauhtémoc</option>
-                    <option value="Gustavo A. Madero">Gustavo A. Madero</option>
-                    <option value="Iztacalco">Iztacalco</option>
-                    <option value="Iztapalapa">Iztapalapa</option>
-                    <option value="Magdalena Contreras">Magdalena Contreras</option>
-                    <option value="Miguel Hidalgo">Miguel Hidalgo</option>
-                    <option value="Milpa Alta">Milpa Alta</option>
-                    <option value="Tláhuac">Tláhuac</option>
-                    <option value="V. Carranza">V. Carranza</option>
-                    <option value="Xochimilco">Xochimilco</option>
-                </datalist>
-
-                <input type="text" name="colonia" id="colonia" placeholder="ej. balbuena" value="hola">
-            </form>
-        </section>
-
-        <section class="tiempo">
-            <form id="time">
-                <div class="timeFrame">
-                    <label for="hLlegada" class="timeLabel">Hora de llegada</label>
-                    <input type="time" id="hLlegada" name="hLlegada" required class="clock">
-                </div>
-
-                <div class="timeFrame">
-                    <label for="hInstalacion" class="timeLabel">Hora de instalación</label>
-                    <input type="time" id="hInstalacion" name="hInstalacion" required class="clock">
-                </div>
-
-                <div class="timeFrame">
-                    <label for="hInicio" class="timeLabel">Hora de Inicio</label>
-                    <input type="time" id="hInicio" name="hInicio" value="10:00" required class="clock">
-                </div>
-
-                <div class="timeFrame">
-                    <label for="hFin" class="timeLabel">Hora de Fin</label>
-                    <input type="time" id="hFin" name="hFin" value="14:00" required class="clock">
-                </div>
-            </form>
-        </section>
-
-        <section class="actas">
+        <section class="reporte">
             <form id="pagUno">
-                <h2>PAGINA 1</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP1" class="actasLabel">NACIMIENTO: </label><span id="numNaciP1"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP1" name="claseNacimientoP1" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 1</h2>
+                <label for="naP1" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP1" name="naP1" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP1" class="actasLabel">MATRIMONIO: </label><span id="numMatP1"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP1" name="claseMatrimonioP1" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP1" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP1" name="maP1" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP1" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP1"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP1" name="claseDefuncionP1" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP1" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP1" name="deP1" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP1" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP1" name="masculinoP1" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP1" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP1" name="femeninoP1" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP1" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP1" name="suciasP1" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP1" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP1" name="suP1" value="0" min="0" max="25" step="1">
 
+                <label for="femP1" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP1" name="femP1" value="0" min="0" max="25">
+                <label for="boyP1" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP1" name="boyP1" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
 
             <form id="pagDos">
-                <h2>PAGINA 2</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP2" class="actasLabel">NACIMIENTO: </label><span id="numNaciP2"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP2" name="claseNacimientoP2" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 2</h2>
+                <label for="naP2" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP2" name="naP2" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP2" class="actasLabel">MATRIMONIO: </label><span id="numMatP2"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP2" name="claseMatrimonioP2" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP2" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP2" name="maP2" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP2" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP2"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP2" name="claseDefuncionP2" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP2" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP2" name="deP2" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP2" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP2" name="masculinoP2" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP2" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP2" name="femeninoP2" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP2" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP2" name="suciasP2" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP2" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP2" name="suP2" value="0" min="0" max="25" step="1">
+
+                <label for="femP2" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP2" name="femP2" value="0" min="0" max="25">
+                <label for="boyP2" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP2" name="boyP2" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
 
             <form id="pagTres">
-                <h2>PAGINA 3</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP3" class="actasLabel">NACIMIENTO: </label><span id="numNaciP3"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP3" name="claseNacimientoP3" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 3</h2>
+                <label for="naP3" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP3" name="naP3" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP3" class="actasLabel">MATRIMONIO: </label><span id="numMatP3"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP3" name="claseMatrimonioP3" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP3" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP3" name="maP3" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP3" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP3"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP3" name="claseDefuncionP3" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP3" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP3" name="deP3" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP3" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP3" name="masculinoP3" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP3" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP3" name="femeninoP3" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP3" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP3" name="suciasP3" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP3" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP3" name="suP3" value="0" min="0" max="25" step="1">
+
+                <label for="femP3" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP3" name="femP3" value="0" min="0" max="25">
+                <label for="boyP3" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP3" name="boyP3" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
 
             <form id="pagCuatro">
-                <h2>PAGINA 4</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP4" class="actasLabel">NACIMIENTO: </label><span id="numNaciP4"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP4" name="claseNacimientoP4" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 4</h2>
+                <label for="naP4" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP4" name="naP4" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP4" class="actasLabel">MATRIMONIO: </label><span id="numMatP4"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP4" name="claseMatrimonioP4" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP4" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP4" name="maP4" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP4" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP4"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP4" name="claseDefuncionP4" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP4" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP4" name="deP4" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP4" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP4" name="masculinoP4" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP4" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP4" name="femeninoP4" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP4" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP4" name="suciasP4" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP4" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP4" name="suP4" value="0" min="0" max="25" step="1">
+
+                <label for="femP4" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP4" name="femP4" value="0" min="0" max="25">
+                <label for="boyP4" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP4" name="boyP4" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
 
             <form id="pagCinco">
-                <h2>PAGINA 5</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP5" class="actasLabel">NACIMIENTO: </label><span id="numNaciP5"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP5" name="claseNacimientoP5" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 5</h2>
+                <label for="naP5" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP5" name="naP5" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP5" class="actasLabel">MATRIMONIO: </label><span id="numMatP5"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP5" name="claseMatrimonioP5" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP5" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP5" name="maP5" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP5" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP5"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP5" name="claseDefuncionP5" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP5" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP5" name="deP5" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP5" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP5" name="masculinoP5" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP5" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP5" name="femeninoP5" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP5" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP5" name="suciasP5" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP5" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP5" name="suP5" value="0" min="0" max="25" step="1">
+
+                <label for="femP5" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP5" name="femP5" value="0" min="0" max="25">
+                <label for="boyP5" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP5" name="boyP5" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
 
             <form id="pagSeis">
-                <h2>PAGINA 6</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP6" class="actasLabel">NACIMIENTO: </label><span id="numNaciP6"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP6" name="claseNacimientoP6" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 6</h2>
+                <label for="naP6" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP6" name="naP6" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP6" class="actasLabel">MATRIMONIO: </label><span id="numMatP6"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP6" name="claseMatrimonioP6" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP6" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP6" name="maP6" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP6" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP6"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP6" name="claseDefuncionP6" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP6" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP6" name="deP6" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP6" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP6" name="masculinoP6" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP6" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP6" name="femeninoP6" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP6" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP6" name="suciasP6" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP6" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP6" name="suP6" value="0" min="0" max="25" step="1">
+
+                <label for="femP6" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP6" name="femP6" value="0" min="0" max="25">
+                <label for="boyP6" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP6" name="boyP6" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
 
             <form id="pagSiete">
-                <h2>PAGINA 7</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP7" class="actasLabel">NACIMIENTO: </label><span id="numNaciP7"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP7" name="claseNacimientoP7" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 7</h2>
+                <label for="naP7" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP7" name="naP7" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP7" class="actasLabel">MATRIMONIO: </label><span id="numMatP7"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP7" name="claseMatrimonioP7" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP7" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP7" name="maP7" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP7" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP7"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP7" name="claseDefuncionP7" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP7" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP7" name="deP7" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP7" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP7" name="masculinoP7" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP7" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP7" name="femeninoP7" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP7" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP7" name="suciasP7" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP7" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP7" name="suP7" value="0" min="0" max="25" step="1">
+
+                <label for="femP7" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP7" name="femP7" value="0" min="0" max="25">
+                <label for="boyP7" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP7" name="boyP7" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
-
 
             <form id="pagOcho">
-                <h2>PAGINA 8</h2>
-                <div class="actasFrame">
-                    <label for="claseNacimientoP8" class="actasLabel">NACIMIENTO: </label><span id="numNaciP8"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseNacimientoP8" name="claseNacimientoP8" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <h2 class="pagina">HOJA 8</h2>
+                <label for="naP8" class="labelActa">NACIMIENTO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="naP8" name="naP8" value="0" min="0" max="25" step="1">
 
-                    <label for="claseMatrimonioP8" class="actasLabel">MATRIMONIO: </label><span id="numMatP8"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseMatrimonioP8" name="claseMatrimonioP8" value="0" min="0" max="25"
-                        step="1" class="actasInput">
+                <label for="maP8" class="labelActa">MATRIMONIO:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="maP8" name="maP8" value="0" min="0" max="25" step="1">
 
-                    <label for="claseDefuncionP8" class="actasLabel">DEFUNCIÓN: </label><span id="numDefP8"
-                        class="spanActas">X</span>
-                    <input type="range" id="claseDefuncionP8" name="claseDefuncionP8" value="0" min="0" max="25"
-                        step="1" class="actasInput">
-                </div>
+                <label for="deP8" class="labelActa">DEFUNCIÓN:</label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="deP8" name="deP8" value="0" min="0" max="25" step="1">
 
-                <div class="atencionesFrame">
-                    <label for="masculinoP8" class="atencionesLabel">Masculino</label>
-                    <input type="number" id="masculinoP8" name="masculinoP8" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="femeninoP8" class="atencionesLabel">Femenino</label>
-                    <input type="number" id="femeninoP8" name="femeninoP8" min="0" max="25" value="0"
-                        class="atencionesInput">
-                    <label for="suciasP8" class="atencionesLabel">Sucias</label>
-                    <input type="number" id="suciasP8" name="suciasP8" min="0" max="25" value="0"
-                        class="atencionesInput">
-                </div>
+                <label for="suP8" class="labelActa">SUCIAS: </label><span class="spanNumber">X</span>
+                <input class="inputActa" type="range" id="suP8" name="suP8" value="0" min="0" max="25" step="1">
+
+                <label for="femP8" class="labelFem">FEMENINO</label>
+                <input class="inputFem" type="number" id="femP8" name="femP8" value="0" min="0" max="25">
+                <label for="boyP8" class="labelBoy">MASCULINO</label>
+                <input class="inputBoy" type="number" id="boyP8" name="boyP8" value="0" min="0" max="25">
+
+                <input type="submit" value="caputura" class="submitButton">
+                <input type="button" value="NEXT" class="nextButton">
             </form>
         </section>
-        <input type="image" src="https://pm1.aminoapps.com/6755/77bdc5e31701c3dfc012b6dcf6cc1ba34cc0e554v2_128.jpg"
-            id="calcular">
 
+        <section class="showMensaje">
 
+            <ul class="puntos">
+                <li class="punto">1</li>
+                <li class="punto">2</li>
+                <li class="punto">3</li>
+                <li class="punto">4</li>
+                <li class="punto">5</li>
+                <li class="punto">6</li>
+                <li class="punto">7</li>
+                <li class="punto">8</li>
+            </ul>
 
-        <h3>RESULTADOS</h3>
-        <pre>
-        <p id="resultados"></p>
-        </pre>
+            <button id="btnMensaje">Mensaje</button>
+            <p id="mensaje">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolor reiciendis adipisci hic
+                quasi nobis, aut sint. Molestias, ut porro tempora veritatis earum quo nisi rem, ducimus, deserunt
+                quidem molestiae.</p>
+        </section>
     </main>
 
 </body>
