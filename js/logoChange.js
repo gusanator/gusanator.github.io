@@ -1,9 +1,9 @@
 let hrefStyle =  document.head.querySelector("link");
 let actualVersion = 1;
-const v1= "../estilos/jStyles.css";
+const v1= "../estilos/jStyle.css";
 const v2="../estilos/iStyle.css";
 
-const targetLogo = document.querySelector("#logo");
+const targetLogo = document.querySelector("#icon");
 
 targetLogo.addEventListener("click",()=>{
     console.log("click");
