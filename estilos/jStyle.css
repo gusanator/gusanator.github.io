@@ -86,7 +86,7 @@ div.banner h2{
     color: var(--textColor);
 
     padding: 1rem;
-    font-size: 5rem;
+    font-size: 4rem;
 
     text-transform: uppercase;
 }
@@ -116,7 +116,7 @@ li.projects{
 }
 
 li.projects h2{
-    font-size: 3rem;
+    /* font-size: 3rem; */
     font-style: italic;
     user-select: none;
 }
