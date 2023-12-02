@@ -6,7 +6,7 @@
 ## Table of Contents
 + [General Info](#general-info)
 + [Technologies Used](#technologies-used)
-+ [Setup & Usage](#setup-&-usage)
++ [Setup and Usage](#setup-and-usage)
 + [Project Status](#project-status)
 + [Acknowledgements](#acknowledgements)
 + [Contact](#contact)
@@ -50,7 +50,8 @@ I also use for workflow management:
 - Git
 - GitHub
 
-## Setup & Usage
+
+## Setup and Usage
 You only have to click [djrr.com] 
 
 ## Project Status
