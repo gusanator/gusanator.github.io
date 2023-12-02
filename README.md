@@ -22,12 +22,14 @@ Currently, i've three projects:
 -   indexCalculadora.html, *a Calculator*
 -   indexPiano.html, *one octave piano*
 -    indexFeria.html, *report helper for work*
+
 ### estilos folder
 Both **iStyle.css** and **jStyle.css** are used in the index.html file and you can toggle between them clicking the  query selector #icon.
 Each project has it's owne css file:
 -   styleCalculadora.css
 -   stylePiano.css
 -   styleFeria.css
+
 ### js folder
 Both **logoChange.js** and **mainJS.js** are used on the homepage. 
 **mainJS.js** controls the display of each project title, while **logoChange.js** toggles between **iStyle.css** and **jStyle.css**.
@@ -35,6 +37,7 @@ Each project also has it's own JS file:
 -	calculadora.js
 -	piano.js
 -	feria.js
+
 ###  img folder
 ``img & icon``Folders contain media content that is used in the whole project.
 
@@ -46,6 +49,7 @@ Each project also has it's own JS file:
 I also use for workflow management:
 - Git
 - GitHub
+
 ## Setup & Usage
 You only have to click [djrr.com] 
 
