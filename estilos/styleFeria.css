@@ -1,29 +1,86 @@
-:root {
-  --textColor: #fcfef6;
-  --backgroundColor: #070901;
-  --transBackgroundColor: #07090190;
-  --primaryColor: #0b658e;
-  --secondaryColor: #2f4205;
-  --accentColor: #ef25af;
-}
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}body {
-  color: var(--backgroundColor);
-  background-color: var(--primaryColor);
+  font-size: 16px;
 }
-.reporte{
-  text-align: center;
+:root {
+  --text-color: #e4eaec;
+  --bg-color: #070b0d;
+  --main-color: #94c1d2;
+  --secondary-color: #296c87;
+  --accent-color: #2f4205;
+  --third-color: #36a8d5;
+  --transparent-bg: #94c3d2c1;
+}
+/* ANIMACIONES----------- */
+@keyframes animate-stroke {
+  0% {
+      fill: transparent;
+      stroke: black;
+      stroke-width: 3rem;
+
+      stroke-dashoffset: 25%;
+      /*espaciado entre las lineas del perimetro */
+      stroke-dasharray: 0 35%;
+      /*que tanto se unen las lineas del perimetro*/
+  }
+
+  50% {
+      stroke-width: 2;
+  }
+
+  80% {
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 32% 0;
+      stroke: navy;
+  }
+
+  100% {
+      stroke-width: 0rem;
+  }
+}
+/* FIN ANIMACIONES */
+header {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header a {
+  text-decoration: none;
+}
+#logo {
+  width: 3rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+svg {
+  width: 15rem;
+  height: 3rem;
+}
+svg text {
+  font-size: 3rem;
+  font-family: 'Pixelify Sans';
+  font-weight: bolder;
+  fill: navy;
+
+  animation: 1s 1 animate-stroke;
 }
 
-#pagUno{
-  border: solid;
-}.spanNumber{
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.reporte{
+  text-align: center;
+  border: solid var(--third-color) thick;
+  padding: 1rem;
+}
+
+.spanNumber{
   margin: 0.3rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #2f4205;
 }.inputActa{
   width: 95%;
@@ -32,7 +89,7 @@
 }
 .inputFem,.inputBoy{
   display: block;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   font-size: 1.3rem;
 }
 .nextButton{
@@ -47,9 +104,14 @@
   padding: 0.5rem;
   border-radius: 1rem;
 }
+
 .showMensaje{
   border: solid;
   text-align: center;
+}
+
+ul.puntos{
+  background-color: var(--main-color);
 }
 
 li.punto{
@@ -57,17 +119,19 @@ li.punto{
   padding: 1rem;
   margin: 0.3rem;
   border-radius: 1rem;
-  border: solid;
+  border: solid var(--accent-color);
 }
 #btnMensaje{
   margin: 0.5rem auto;
   font-size: 2rem;
   padding: 0.3rem;
-  background-color: var(--backgroundColor);
-  color: var(--textColor);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 #mensaje{
-  width: 10rem;
+  border: solid;
+  background-color: var(--secondary-color);
+
   margin: 0 auto;
   text-align: justify;
   white-space: pre;

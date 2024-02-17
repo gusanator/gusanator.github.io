@@ -27,11 +27,13 @@ function stopMusic() {
 }
 
 // ----------VAR KEYS
+// id de las notas
 const idKeys = [
     "c-key","c#-key","d-key","d#-key","e-key",
     "f-key","f#-key","g-key","g#-key","a-key",
     "a#-key","b-key","c2-key"
 ];
+// arreglo de las variables con las notas del documento html
 const nodeKeys =[];
 idKeys.forEach(key =>{
     nodeKeys.push(document.getElementById(key));
@@ -49,7 +51,6 @@ function keyPlay(event){
         case "C#":
           playNote(277.18);
           break;
-    
         case "D":
           playNote(293.66);
           break;
@@ -88,6 +89,7 @@ function keyPlay(event){
           false
           break;
       }
+      return true
 };
 function keyReturn(event) {
     event.target.style.backgroundColor = "";
@@ -137,6 +139,7 @@ function keyReturn(event) {
       default:
         break;
     }
+    return true
 };
 function keyEvent(note){
     note.ontouchstart = keyPlay;
@@ -145,6 +148,7 @@ function keyEvent(note){
     note.onmousedown = keyPlay;
     note.onmouseup = keyReturn;
 };
+// agraga los events
 nodeKeys.forEach(keyEvent);
 
 // ---------CHANGE LYRICS
@@ -152,10 +156,6 @@ const btnOne = document.querySelector("#nextOne");
 const btnTwo = document.querySelector("#nextTwo");
 const btnThree = document.querySelector("#nextThree");
 const btnReset = document.querySelector("#nextFour");
-
-btnTwo.hidden = true;
-btnThree.hidden = true;
-btnReset.hidden = true;
 
 const lyOne = document.querySelector("#lyricOne");
 const ntOne = document.querySelector("#noteOne");
@@ -177,10 +177,8 @@ const ntSix = document.querySelector("#noteSix");
 
 const lyExtra = document.querySelector("#lyricExtra");
 const ntExtra = document.querySelector("#noteExtra");
-const colExtra = document.querySelector(".colExtra");
-// colExtra.style.display = "none";
+const colExtra = document.querySelector("#colExtra");
 colExtra.hidden=true;
-
 // EVENTS CHANGE LYRICS----
 btnOne.onclick = ()=>{
     btnOne.hidden = true;

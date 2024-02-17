@@ -33,6 +33,17 @@ function selectFocus() {
 selectFocus();
 
 // EVENTs LISTENER
+function cargaSpans() {
+    const inputActas = document.querySelectorAll(".inputActa");
+    const inputSpans = document.querySelectorAll(".spanNumber");
+    for (let i = 0; i < inputActas.length; i++) {
+        inputSpans[i].innerHTML = inputActas[i].value;
+        inputSpans[i].style.color = "rgb(98, 8, 8)";
+    }
+    return true;
+}
+cargaSpans();
+
 function escuchaSpans() {
     const inputActas = document.querySelectorAll(".inputActa");
     const inputSpans = document.querySelectorAll(".spanNumber");
@@ -40,7 +51,7 @@ function escuchaSpans() {
     for (let i = 0; i < inputActas.length; i++) {
         inputActas[i].addEventListener("input", () => {
             inputSpans[i].innerHTML = inputActas[i].value;
-            inputSpans[i].style.color = "rgb(98, 8, 8)";
+            inputSpans[i].style.color = "#36a8d5";
         });
     }
     return true;
@@ -65,7 +76,6 @@ for (let j = 0; j < REPORTE.length; j++) {
             }
         }
         // -------------------FIN PRINT_PUNTOS
-
         console.log(PUNTO)
     });
 };
@@ -170,15 +180,15 @@ class ReporteHoja {
         const total_total = sumaTodo();
         MENSAJE.innerHTML =
 `*ACTAS*
-    Nacimiento:${total_actas[0]}
-    Matrimonio:${total_actas[1]}
-    Defunción:${total_actas[2]}
-    Sucias:${total_actas[3]}
+Nacimiento:${total_actas[0]}
+Matrimonio:${total_actas[1]}
+Defunción:${total_actas[2]}
+Sucias:${total_actas[3]}
 *ATENCIÓNES*
-    Femenino:${total_actas[4]}
-    Masculino:${total_actas[5]}
-*TOTAL ACTAS:*${total_total[0]}
-*TOTAL ATENCIÓNES:*${total_total[1]}
-*SOBRAN:*${total_total[2]}`
+Femenino:${total_actas[4]}
+Masculino:${total_actas[5]}
+*TOTAL ACTAS:* ${total_total[0]}
+*TOTAL ATENCIÓNES:* ${total_total[1]}
+*SOBRAN:* ${total_total[2]}`
     }
 }//fin clase

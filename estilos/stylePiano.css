@@ -1,39 +1,127 @@
-/* -----------UNIVERSALES----------- */
-:root {
-    --main-color: #d345c5;
-    --second-color: #f4d5d2;
-    --third-color: #26f742f6;
-    --accent-color: #ca2fbb;
-    --font-color: #0a290d;
-    --bg-color: #eafaec;
-}
-
-* {
+*{
     margin: 0;
     padding: 0;
-    /* font-family: 'Black Ops One', cursive;
-       font-family: 'Handjet', cursive; */
-    font-family: 'Rajdhani', sans-serif;
-    color: var(--font-color)
+    font-size: 16px;
+}
+:root{
+    --text-color: #e4eaec;
+    --bg-color: #070b0d;
+    --main-color: #94c1d2;
+    --secondary-color: #296c87;
+    --accent-color: #36a8d5;
 }
 
 body{
     background-color: var(--bg-color);
-    text-align: center;
 }
+/* ANIMACIONES----------- */
+@keyframes animate-stroke {
+    0%{
+        fill: transparent;
+        stroke: black;
+        stroke-width: 3rem;
+
+        stroke-dashoffset: 25%; /*espaciado entre las lineas del perimetro */
+        stroke-dasharray: 0 35%; /*que tanto se unen las lineas del perimetro*/
+    }
+
+    50%{
+        stroke-width: 2;
+    }
+
+    80%{
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 32% 0;
+        stroke: navy;
+    }
+
+    100%{
+        stroke-width:0rem;
+    }
+}
+/* FIN ANIMACIONES */
 header{
-    border: 1rem solid var(--third-color);
+    background-color: aquamarine;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /* padding: 0 1rem; */
+}
+header a{
+    text-decoration: none;
+}
+#logo{
+    width: 3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+svg{
+    width:15rem;
+    height:3rem;
+}
+svg text{
+    font-size: 3rem;
+    font-family: 'Pixelify Sans';
+    font-weight: bolder;
+    fill: navy;
+
+    animation: 1s 1 animate-stroke;
 }
 
 main{
-    background-color: var(--second-color);
-    border: 0.5rem solid var(--third-color);
+    text-align: center;
+    background-color: var(--main-color); 
+}
+
+/* --------LYRICS STYLE */
+#lyrics{
+    background-color: var(--accent-color);
+    padding: 1rem 0 0.5rem 0;
+    /* ------ */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+/* LYRICS & NOTES & BUTTONS */
+#colOne,#colTwo,#colThree,#colFour,#colFive,#colSix,#colExtra{
+    flex: 0 0 5rem;
+    margin: 0 0.7rem 0.8rem 0.5rem;
+}
+#lyricOne,#lyricTwo,#lyricThree,#lyricFour,#lyricFive,#lyricSix,#lyricExtra{
+    font-size: 1.5rem;
+    padding: 0.3rem;
+
+    border: solid;
+    border-radius: 5px;
+    display: block;
+
+    background-color: var(--text-color);
+}
+#noteOne,#noteTwo,#noteThree,#noteFour,#noteFive,#noteSix,#noteExtra{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    display: block;
+}
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+#buttons button{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 0 black;
 }
 
 /* --------PIANO STYLES-------- */
-main section.piano{
+#piano{
     border: 1px solid;
     padding: 0.5rem 0 1rem 0;
+
+    margin: 2rem 0 0 0;
+    background-color: var(--secondary-color);
 }
 
 /* ------CLASS KEY STYLE */
@@ -43,12 +131,14 @@ div.key{
     display: inline-block;
 
     line-height: 23rem;
-    background-color: var(--bg-color);
+    background-color: var(--text-color);
     border: solid 2px;
     box-shadow: 2px 5px;
 
     cursor: pointer;
     user-select: none; 
+
+    transition: all 0.1s ease;
 }
 /* --------CLASS BLACK KEY STYLE */
 div.bKey {
@@ -58,52 +148,19 @@ div.bKey {
     display: inline-block;
     position: absolute;
     margin-left: -13px;
-    line-height: 10rem;
+    line-height: 12rem;
 
-    background-color: var(--font-color);
-    color: var(--bg-color);
-    box-shadow: 2px 2px var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 2px 2px var(--secondary-color);
 
     cursor: pointer;
     user-select: none;
+    
+    transition: all 0.1s ease;
 }
 /* --------fin PIANO STYLES-------- */
-
-/* --------LYRICS STYLE */
-main section.lyrics{
-    background-color: var(--main-color);
-    padding: 1rem 0 0.5rem 0;
-    /* ------ */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-}
-
-/* LYRICS & NOTES & BUTTONS */
-#colOne,#colTwo,#colThree,#colFour,#colFive,#colSix,#colExtra{
-    flex: 0 0 5rem;
-    margin: 0 0.5rem 0.2rem 0.5rem;
-}
-
-#lyricOne,#lyricTwo,#lyricThree,#lyricFour,#lyricFive,#lyricSix,#lyricExtra{
-    font-size: 1.5rem;
-
-    border: solid;
-    border-radius: 5px;
-    display: block;
-    background-color: var(--bg-color);
-}
-#noteOne,#noteTwo,#noteThree,#noteFour,#noteFive,#noteSix,#noteExtra{
-    font-size: 1.5rem;
-    font-weight: bolder;
-    color: var(--third-color);
-    display: block;
-}
-
-#nextOne,#nextTwo,#nextThree,#nextFour{
-    flex: 0 0 6rem;
-    height: 2rem;
-
-    margin: 0.5rem 0 0 0;
-    box-shadow: 1px 1px 0 black;
+footer{
+    color: var(--text-color);
+    text-align: center;
 }

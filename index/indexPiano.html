@@ -16,8 +16,16 @@
     <title>Piano Project</title>
 </head>
 <body>
+    <header>
+        <a href="../index/index.html">
+            <img src="../img/logo.png" alt="logo" id="logo">
+            <svg viewBox="0 0 50 50">
+                <text x="50%" y="30%" dy="1.3rem" text-anchor="middle">DJRR</text>
+            </svg>
+        </a>
+    </header>
     <main>
-        <section class="lyrics">
+        <section id="lyrics">
             <div id="colOne">
                 <div id="lyricOne">HAP-</div>
                 <div id="noteOne">C</div>
@@ -26,7 +34,7 @@
                 <div id="lyricTwo">PY</div>
                 <div id="noteTwo">C</div>
             </div>
-            <div id="colthree">
+            <div id="colThree">
                 <div id="lyricThree">BIRTH-</div>
                 <div id="noteThree">D</div>
             </div>
@@ -42,17 +50,19 @@
                 <div id="lyricSix">YOU!</div>
                 <div id="noteSix">E</div>
             </div>
-            <div class="colExtra">
+            <div id="colExtra">
                 <div id="lyricExtra">END</div>
                 <div id="noteExtra">D</div>
             </div>
 
-            <button id="nextOne">Line 2</button>
-            <button id="nextTwo">Line 3</button>
-            <button id="nextThree">Line 4</button>
-            <button id="nextFour">RESET</button>
+            <div id="buttons">
+                <button id="nextOne">Line 2</button>
+                <button id="nextTwo" hidden>Line 3</button>
+                <button id="nextThree" hidden>Line 4</button>
+                <button id="nextFour" hidden>RESET</button>
+            </div>
         </section>
-        <section class="piano">
+        <section id="piano">
             <!-- NOTE C -->
             <div id="c-key" class="key">C</div>
             <div id="c#-key" class="bKey">C#</div>
@@ -77,10 +87,10 @@
         </section>
     </main>
 
-    <header>
+    <footer>
         <h1>PIANO PLAY</h1>
         <h2>Happy Birthday Song</h2>
-    </header>
+    </footer>
     
 </body>
 </html>
