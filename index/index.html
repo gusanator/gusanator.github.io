@@ -1,73 +1,169 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/iStyle.css">
-    <script src="../js/mainJS.js" defer></script>
-    <script src="../js/logoChange.js" defer></script>
-    <!-- FUENTES -->
+    <!-- //FUENTES  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Pixelify+Sans&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=The+Girl+Next+Door&display=swap"
         rel="stylesheet">
-    <!-- FIN FUENTES -->
-    <title>DJRR</title>
+    <!--  -->
+    <script src="../js/mainJS.js" defer></script>
+    <title>pagina principal</title>
 </head>
+
 <body>
-    <header>
-        <img src="../img/logo.png" alt="logo" id="logo">
-        <nav><ul>
-         <li class="nav"><a href="#aboutMe">about me</a></li>
-         <li class="nav"><a href="#projects">projects</a></li>
-         <li class="nav"><a href="#contactMe">contact me</a></li>
-         <li class="nav"><a href="#">CV</a></li>
-         <li id="maxIcon" class="nav"><img id="icon" class="bSpin" src="../img/rock.png" alt="icon"></li>   
-        </ul></nav>
-    </header>
-
+    <header></header>
     <main>
-        <div class="banner" id="aboutMe">
-            <h2>djrr lore</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, debitis accusantium ex necessitatibus animi repellat optio esse dicta aliquid facere corrupti officia cupiditate! In, vitae natus quisquam cum doloremque nam.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic tempora rerum illo placeat voluptatibus voluptas facilis similique eos natus, perspiciatis delectus ab error inventore modi ut voluptatum dolores quo illum?
-            </p>
-        </div>
+        <section class="content active-content" id="home">
 
-        <div id="projects"><ul>
-                <li class="projects">
-                    <h2>PIANO</h2>
-                    <a href="../index/indexPiano.html" class="proj">visit now</a>
-                </li>
-                <li class="projects">
-                    <h2>CALCULADORA</h2>
-                    <a href="../index/indexCalculadora.html" class="proj">click me</a>
-                </li>
-                <li class="projects">
-                    <h2>FERIAS DEL BIENESTAR</h2>
-                    <a href="../index/indexFeria.html" class="proj">visit here</a>
-                </li>
-                <li class="projects" id="projectsFocus">
-                    <h2>MINAS</h2>
-                    <a href="#" class="proj">cooming soon</a>
-                </li>
-        </ul></div>
-        <div id="contactMe">
-            <img src="../img/bg-logo.jpg" alt="djrr">
-            <div class="textMe">
-                <p>Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit inventore possimus cum, culpa, corrupti porro quam molestias, fugit id nobis sapiente nam. Voluptatibus corrupti nam porro dolorum expedita doloremque quis!ipsum dolor sit amet consectetur adipisicing elit. Harum numquam officiis distinctio excepturi <strong>delectus explicabo perspiciatis consequuntur</strong> dolor beatae quis, quia sequi tempora deleniti fugiat sit iste a reiciendis odio!</p>
-                <button>send</button>
+            <h1><em>D</em>iego <em>J</em>ulián <em>R</em>amírez <em>R</em>ojas</h1>
+            <div class="hero">
+                <p>Soy un profesional altamente motivado y orientado a resultados, con una sólida pasión por la
+                    innovación y el aprendizaje constante. Busco un entorno laboral dinámico y estimulante donde pueda
+                    aplicar mis habilidades y conocimientos en áreas como diseño web, desarrollo de software y
+                    tecnologías de la información. Mi objetivo es contribuir de manera significativa al crecimiento y
+                    éxito de la organización, mientras sigo ampliando mi horizonte profesional y alcanzando nuevas
+                    metas. Con un enfoque centrado en la excelencia y la mejora continua, estoy preparado para enfrentar
+                    con entusiasmo cada desafío que se presente en mi camino.</p>
             </div>
-        </div>
+            <img class="img" src="../img/astro.png" alt="austronauta">
+            <img class="img" src="../img/djrr.png" alt="djrr">
+        </section>
+
+        <section class="content" id="projects">
+            <h2 class="titulo">Proyectos</h2>
+            <ul class="cards-container">
+                <li class="card">
+                    <div class="card-title">
+                        <h3>piano</h3>
+                    </div>
+                    <div class="card-text"><a href="../index/indexPiano.html">click me</a></div>
+
+                </li>
+                <li class="card">
+                    <div class="card-title">
+                        <h3>calculadora</h3>
+                    </div>
+                    <div class="card-text"><a href="../index/indexCalculadora.html">click now</a></div>
+                </li>
+                <li class="card">
+                    <div class="card-title">
+                        <h3>Ferias</h3>
+                    </div>
+                    <div class="card-text"><a href="../index/indexFeria.html">click here</a></div>
+                </li>
+                <li class="card">
+                    <div class="card-title">
+                        <h3>Cooming soon</h3>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="content" id="about">
+            <h2 class="titulo">Acerca de mi</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <h3>Educación</h3>
+                    <div class="timeline-cards">
+                        <div class="timeline-card">
+                            <h3>2014 - 2019</h3>
+                            <h3>Licenciatura en Ingeniería en Computación</h3>
+                            <p>Facultad de Ingeniería, Universidad Nacional Autónoma de México (UNAM), Ciudad
+                                Universitaria (CU)</p>
+                        </div>
+                        <div class="timeline-card">
+                            <h3>2019 - 2020</h3>
+                            <h3>Certificación en Tecnologías de Infraestructura de TI</h3>
+                            <p>Facultad de Ingeniería, Universidad Nacional Autónoma de México (UNAM), Ciudad
+                                Universitaria (CU)</p>
+                        </div>
+                        <div class="timeline-card">
+                            <h3>2022</h3>
+                            <p>Bootcamp en Pruebas de Software</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <h3>Experiencia</h3>
+                    <div class="timeline-cards">
+                        <div class="timeline-card">
+                            <h3>2020 - 2021</h3>
+                            <h3>STEAM Educational Trainer</h3>
+                            <ul class="exp">
+                                <li>✔️ Supervisé la implementación de cursos <abbr
+                                        title="Science, Technology, Engineering, Arts and Math">STEAM</abbr> en escuelas
+                                    de primaria y secundaria en la CDMX.</li>
+                                <li>✔️ Desarrollé software educativo utilizando SCRATCH para apoyar el proceso de
+                                    enseñanza.</li>
+                                <li>✔️ Realicé pruebas de software y tareas administrativas.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-card">
+                            <h3>2022 - Presente</h3>
+                            <h3>Servidor Público en la <abbr title="Dirección General del Registro Civil">DGRC</abbr>
+                            </h3>
+
+                            <ul class="exp">
+                                <li>✔️ Encargado de brindar servicio al cliente, incluyendo contacto diario con usuarios
+                                    en persona y por correo electrónico.</li>
+                                <li>✔️ Manejo confidencial de información para garantizar la privacidad y seguridad de
+                                    los datos de los usuarios.</li>
+                                <li>✔️ Supervisé múltiples equipos en diversas áreas, demostrando habilidades sólidas de
+                                    liderazgo y capacidad para manejar situaciones desafiantes con calma y eficacia.
+                                </li>
+                                <li>✔️ Capacité a nuevos empleados y supervisé equipos en diversas áreas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content" id="contact">
+            <h2 class="titulo">Contacto</h2>
+            <div class="form-container">
+                <video autoplay muted loop>video not supported
+                    <!-- <source src="./videoId.mp4" type="video/mp4"> -->
+                    <source src="../media/video/spaceVideo.webm" type="video/webm">
+                </video>
+                <div class="form-banner">
+                    <ul>
+                        <li><em>D</em>iego <em>J</em>ulián <em>R</em>amírez <em>R</em>ojas</li>
+                        <li><em>telefono: </em>(55)34201980</li>
+                        <li><em>pagina linkedIn: </em><a href="#">linken666</a></li>
+                        <li><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240864.08481701676!2d-99.14361265000001!3d19.3907336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1710371330792!5m2!1ses-419!2smx"
+                                width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+                    </ul>
+                </div>
+                <form action="https://formsubmit.co/suaderopapas5@gmail.com" method="POST">
+                    <label for="email">Remitente :</label>
+                    <input type="email" name="email" id="email" placeholder="your email here" required>
+                    <textarea name="message" id="message" cols="55" rows="8" placeholder="Write me an email"></textarea>
+                    <input type="hidden" class="form-hidden" name="_captcha" value="false">
+                    <input type="hidden" class="form-hidden" name="_subject" value="DJRR correo">
+                    <button type="submit">SEND</button>
+                </form>
+            </div>
+        </section>
+        <section class="content" id="extra"></section>
     </main>
-    <footer>
-        <img src="../img/icons/html.png" alt="html5" title="html5">
-        <img src="../img/icons/css.png" alt="css" title="css">
-        <img src="../img/icons/js.png" alt="js" title="js">
-        <img src="../img/icons/github.png" alt="gh" title="github">
-        <img src="../img/icons/git.png" alt="git" title="git ">
-    </footer>
+
+    <aside id="control">
+        <p class="control-btn active-btn" data-id="home" title="Home">🌎</p>
+        <p class="control-btn" data-id="projects" title="Proyectos">🗃️</p>
+        <p class="control-btn" data-id="about" title="Acerca de mi">📑</p>
+        <p class="control-btn" data-id="contact" title="Contacto">📬</p>
+    </aside>
+
+
 </body>
 
 </html>
