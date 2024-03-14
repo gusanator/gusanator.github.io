@@ -345,6 +345,7 @@ div.timeline-container{
     color: var(--home-color);
     display: flex;
     flex-flow: wrap row;
+    justify-content: space-around;
 }
 div.timeline *{
     font-family: "The Girl Next Door", cursive;
