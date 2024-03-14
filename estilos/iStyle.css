@@ -433,6 +433,7 @@ ul.exp li{
     position: relative;
     background-color: #01060d97;
     border-radius: 3rem;
+    overflow: auto;
 }
 .form-container video{
 
