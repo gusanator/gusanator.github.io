@@ -273,9 +273,11 @@ ul.cards-container .card:hover{
 .card:nth-child(3)::after{
     background-image: url("../img/checklist.png");
 }
+
 .card:nth-child(4)::after{
     background-image: url("../img/logo.png");
 }
+
 .card:last-child::after{
     background-image: url("../img/rock.png");
 }
@@ -289,7 +291,7 @@ ul.cards-container .card:hover{
 }
 .card .card-text *{
     color: purple;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -301,7 +303,6 @@ ul.cards-container .card:hover{
 .card:hover.card div.card-title,.card:hover.card div.card-text{
     display: block;
 }
-
 
 @keyframes carta {
 	0% {
@@ -457,6 +458,7 @@ div.form-banner{
     overflow: hidden;
     padding: 4rem 3rem;
 }
+
 div.form-banner ul{
     list-style: none;
     display: grid;
