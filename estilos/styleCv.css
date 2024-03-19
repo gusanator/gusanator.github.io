@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif, verdana;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(4, 202, 87, 0.38);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-flow: wrap row;
+    justify-content: space-around;
+}
+
+h1{
+    flex: 0 0 100%;
+    padding: 0.5rem 0;
+}
+h1 a{
+    text-decoration: underline;
+    font-size: 2rem;
+    color: black;
+}
+
+header p {
+    flex: 0 0 65%;
+    padding: 0.2rem;
+    line-height: 1.3rem;
+}
+div.contacto{
+    text-align: right;
+    flex: 1 0;
+}
+div.contacto *{
+    text-decoration: none;
+    color: black;
+}
+div.contacto a{
+    line-height: 1rem;
+    text-decoration: underline;
+}
+
+main {
+    border-left: solid;
+    padding: 0 0.5rem;
+    margin: 0.5rem 1rem;
+}
+
+#edu,
+#exp {
+    list-style: none;
+    padding: 1rem;
+    line-height: 1.7rem;
+}
+
+h2 {
+    width: 800;
+    font-size: 1.2rem;
+}
+h3.titulo {
+    font-weight: 800;
+    width: 80%;
+    margin: 1rem 0 0 0;
+}
+
+
+h3.instituto {
+    font-weight: 100;
+    width: 55%;
+    font-family: Cambria, sans-serif;
+}
+
+h3.tiempo {
+    color: navy;
+    width: 55%;
+}
+
+h3.porcentaje {
+    width: 20%;
+
+}
+
+ul.tareas{
+    padding: 0.5rem;
+    list-style: square;
+}
+
+footer {
+    background-color: rgba(4, 202, 87, 0.38);
+    display: flex;
+    justify-content: space-evenly;
+}
+/* div.info{} */
+ul.habilidades{
+    list-style: none;
+    flex: 1 0 45%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+}
+div.info{
+    padding: 1rem;
+    flex: 1;
+    /* height: 5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.info>h3.instituto{
+    margin: 2rem 0.5rem 0;
+}
+
+ul.habilidades{
+    display: flex;
+    flex-flow: wrap row;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+ul.habilidades li{
+    padding: 0.5rem;
+    border-radius: 45%;
+
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+
+    cursor: default;
+}
+ul.habilidades li:hover{
+    font-size: 1rem;
+}
+
