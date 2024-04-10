@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/stylePeliapp.css">
+    <script src="../js/peliApp.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Artifika&family=The+Girl+Next+Door&display=swap"
+        rel="stylesheet">
+
+    <title>peliLista</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index/index.html">
+            <img src="../img/logo.png" alt="logo" id="logo">
+            <svg viewBox="0 0 50 50">
+                <text x="50%" y="30%" dy="1.3rem" text-anchor="middle">DJRR</text>
+            </svg>
+        </a>
+    </header>
+    <section class="blacky" id="instructions">
+        <div class="salir" title="cerrar">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <h1>PeliApp</h1>
+        <p>
+            Bienvenido a peliLista, tu compañero perfecto para descubrir y guardar tus películas favoritas. Esta
+            aplicación te ofrece una experiencia intuitiva para explorar una amplia variedad de películas según tus
+            géneros preferidos.
+            <br>
+            Cómo usar peliLista:
+            <br><br>
+            Accede a la aplicación: Al ingresar a la página, verás una pantalla inicial con un icono en la esquina
+            superior derecha. Haz clic en este icono para acceder a la aplicación.
+            <br><br>
+            Selecciona un género: Una vez dentro, encontrarás un menú desplegable titulado "Géneros" en la parte
+            superior de la página. Selecciona el género de películas que te interesa de esta lista.
+            <br><br>
+            Explora las películas: Después de seleccionar un género, en la sección principal de la página verás
+            información sobre una película, como su póster y detalles. Utiliza los botones "Next" y "Back" para navegar
+            entre las diferentes películas del género seleccionado.
+            <br><br>
+            Guarda tus películas favoritas: Si encuentras una película que te interesa y deseas guardar para más tarde,
+            simplemente haz clic en ella. Esto la añadirá a tu lista personalizada de películas guardadas.
+            <br><br>
+            Accede a tu lista de películas guardadas: Para ver las películas que has guardado previamente, haz clic en
+            la sección titulada "PeliLista" en la parte inferior de la página. Aquí encontrarás todas las películas que
+            has seleccionado.
+            <br><br>
+            Cierra la aplicación: Cuando hayas terminado de explorar películas o quieras salir de la aplicación, puedes
+            hacer clic en el icono de salida en la esquina superior derecha de la página para cerrarla.
+            <br><br>
+            ¡Disfruta explorando peliLista y descubre nuevas películas para ver! Si tienes alguna pregunta o necesitas
+            ayuda, no dudes en preguntar.
+        </p>
+    </section>
+    <section class="blacky" id="content">
+        <div class="header">
+            <select name="genres" id="genres">
+            </select>
+        </div>
+        <main>
+            <div class="control">
+                <span id="backPeli">Back</span>
+                <span id="nextPeli">Next</span>
+            </div>
+            <section id="peliInfo">
+                <div id="peliPoster"></div>
+                <div id="peliLetras"></div>
+            </section>
+
+        </main>
+        <footer class="water-effect">
+            <h2>PeliLista</h2>
+        </footer>
+    </section>
+    <section class="blacky" id="pelilista" exit>
+        <div class="salir" title="cerrar">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <div class="lista">
+
+        </div>
+    </section>
+</body>
+
+</html>

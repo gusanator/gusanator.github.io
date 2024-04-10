@@ -277,6 +277,9 @@ ul.cards-container .card:hover{
 .card:nth-child(4)::after{
     background-image: url("../img/logo.png");
 }
+.card:nth-child(5)::after{
+    background-image: url("../img/peliApp.png");
+}
 
 .card:last-child::after{
     background-image: url("../img/rock.png");
